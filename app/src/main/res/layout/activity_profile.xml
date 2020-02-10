@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityProfile.ProfileActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/act_prof_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/base_color"
+                    app:titleTextColor="@color/white" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?android:attr/actionBarSize">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey_50"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:background="@color/base_color">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/activity_profile_image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/user_image"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="2dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.498"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.006" />
+
+                        <TextView
+                            android:id="@+id/image_nama_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="nama"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="@+id/activity_profile_image"
+                            app:layout_constraintStart_toStartOf="@+id/activity_profile_image"
+                            app:layout_constraintTop_toBottomOf="@+id/activity_profile_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="110dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="16dp">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Biodata penduduk"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Nama"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_name_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="NIK"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_name_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nokk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="No KK"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nokk_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nokk" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_akta_kelahiran"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Akta Kelahiran"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nokk_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_akta_kelahiran_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_akta_kelahiran" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_dusun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Dusun"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_akta_kelahiran_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_dusun_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_dusun" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_rtrw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="RT/RW"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_dusun_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_rtrw_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_rtrw" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_kelamin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Jenis Kelamin"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_rtrw_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_kelamin_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_kelamin" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_ttl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Tempat, Tanggal lahir"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_kelamin_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_ttl_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_ttl" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_agama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Agama"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_ttl_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_agama_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_agama" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pendidikan_dalam_kk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Pendidikan Dalam KK"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_agama_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pendidikan_dalam_kk_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pendidikan_dalam_kk" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pendidikan_ditempuh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Pendidikan yang sedang ditempuh"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pendidikan_dalam_kk_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pendidikan_ditempuh_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pendidikan_ditempuh" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pekerjaan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Pekerjaan"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pendidikan_ditempuh_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_pekerjaan_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pekerjaan" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_perkawinan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Status Perkawinan"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_pekerjaan_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_perkawinan_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_perkawinan" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_warga_negara"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Warga Negara"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_perkawinan_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_warga_negara_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_warga_negara" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_paspor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Dokumen Paspor"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_warga_negara_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_paspor_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_paspor" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_kitas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Dokumen Kitas"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_paspor_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_kitas_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_kitas" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_alamat_sebelum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Alamat Sebelumnya"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_kitas_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_alamat_sebelum_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_alamat_sebelum" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_alamat_sekarang"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Alamat Sekarang"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_alamat_sebelum_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_alamat_sekarang_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_alamat_sekarang" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_akta_perkawinan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Akta Perkawinan"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_alamat_sekarang_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_akta_perkawinan_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_akta_perkawinan" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_tgl_perkawinan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Tanggal Perkawinan"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_akta_perkawinan_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_tgl_perkawinan_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_tgl_perkawinan" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardView1"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="16dp">
+
+                            <TextView
+                                android:id="@+id/data_orang_tua"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Data Orang Tua"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik_ayah"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="NIK Ayah"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/data_orang_tua" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik_ayah_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik_ayah" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nama_ayah"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Nama Ayah"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik_ayah_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nama_ayah_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nama_ayah" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik_ibu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="NIK Ibu"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nama_ayah_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nik_ibu_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik_ibu" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nama_ibu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Nama Ibu"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nik_ibu_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_nama_ibu_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nama_ibu" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_cacat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Cacat"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_nama_ibu_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_cacat_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_cacat" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="Status"
+                                android:textColor="@color/grey_500"
+                                android:textSize="12dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_cacat_txt" />
+
+                            <TextView
+                                android:id="@+id/activity_prof_status_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahmad Fauzan"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="normal"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activity_prof_status" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardView2"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:clickable="true">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:background="@color/white">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:src="@drawable/ic_navigate_next"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:text="KEANGGOTAAN KELOMPOK"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cardView3"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:clickable="true">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:background="@color/white">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginRight="16dp"
+                                android:src="@drawable/ic_navigate_next"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:text="DOKUMENT/KELENGKAPAN PENDUDUK"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </ScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

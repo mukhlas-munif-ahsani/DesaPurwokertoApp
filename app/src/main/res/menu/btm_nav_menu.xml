@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_beranda"
+        android:icon="@drawable/ic_beranda"
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/navigation_profile_desa"
+        android:icon="@drawable/ic_view_module"
+        android:title="Profile"/>
+
+    <item
+        android:id="@+id/navigation_pemerintaha_desa"
+        android:icon="@drawable/ic_view_module"
+        android:title="Pemerintahan"/>
+
+    <item
+        android:id="@+id/navigation_data_desa"
+        android:icon="@drawable/ic_view_module"
+        android:title="Data" />
+</menu>

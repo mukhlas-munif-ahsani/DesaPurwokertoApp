@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DesaPurwokertoApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="openNavDrawer">Navigation Drawer Open</string>
+    <string name="closeNavDrawer">Navigation Drawer Close</string>
+    <string name="nama_anda">Nama anda</string>
+</resources>

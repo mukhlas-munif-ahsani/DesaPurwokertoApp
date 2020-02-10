@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="APP">
+        <menu>
+            <item android:title="Cetak Kartu Keluarga"
+                android:id="@+id/nav_draw_print"
+                android:icon="@drawable/ic_local_printshop" />
+            <item android:title="Profile"
+                android:id="@+id/nav_draw_profile"
+                android:icon="@drawable/ic_person_outline" />
+            <item android:title="Riwayat Layanan"
+                android:id="@+id/nav_draw_riwayat"
+                android:icon="@drawable/ic_history" />
+            <item android:title="lapor"
+                android:id="@+id/nav_draw_lapor"
+                android:icon="@drawable/ic_report" />
+            <item android:title="Bantuan"
+                android:id="@+id/nav_draw_bantuan"
+                android:icon="@drawable/ic_live_help" />
+
+        </menu>
+    </item>
+
+    <item android:title="APP">
+        <menu>
+            <item android:title="Log Out"
+                android:id="@+id/nav_draw_logout"
+                android:icon="@drawable/ic_exit_to_app"/>
+        </menu>
+    </item>
+</menu>
