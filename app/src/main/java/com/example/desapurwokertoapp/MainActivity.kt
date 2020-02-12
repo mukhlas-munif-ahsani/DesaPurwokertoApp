@@ -1,23 +1,36 @@
 package com.example.desapurwokertoapp
 
+import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginTop
 import androidx.drawerlayout.widget.DrawerLayout
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.desapurwokertoapp.ActivityLaporan.LaporActivity
+import com.example.desapurwokertoapp.ActivityProfile.ProfileActivity
 import com.example.desapurwokertoapp.FragmentBeranda.BerandaFragment
 import com.example.desapurwokertoapp.FragmentDataDesa.DataDesaFragment
 import com.example.desapurwokertoapp.FragmentPemerintahDesa.PemerintahDesaFragment
 import com.example.desapurwokertoapp.FragmentProfileDesa.ProfileDesaFragment
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationView.OnNavigationItemSelectedListener {
 
+    @BindView(R.id.main_appbar)
+    lateinit var mMainAppbar:AppBarLayout
     @BindView(R.id.main_toolbar)
     lateinit var mMainToolbar: androidx.appcompat.widget.Toolbar
     @BindView(R.id.drawer_layout)
@@ -26,6 +39,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var mNavView: NavigationView
     @BindView(R.id.bottomNavigation)
     lateinit var mBottomNavigationView: BottomNavigationView
+    @BindView(R.id.fl_container)
+    lateinit var mContainer: FrameLayout
+
+    var isLogin:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +52,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(mMainToolbar)
         supportActionBar?.setTitle("Beranda")
+
+        if (isLogin){
+            if (savedInstanceState == null) {
+                val fragment = BerandaFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
+                    .commit()
+            }
+
+        }else{
+            if (savedInstanceState == null) {
+                val fragment = LoginFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
+                    .commit()
+            }
+        }
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this,
@@ -46,13 +82,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        if (savedInstanceState == null) {
-            val fragment = BerandaFragment()
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
-                .commit()
-        }
+
 
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
@@ -119,26 +149,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun navigateToBantuan() {
-        showMessage("kamu ada di BANTUAN")
+        val intent = Intent(this, BantuanActivity::class.java)
+        startActivity(intent)
+        //showMessage("kamu ada di BANTUAN")
     }
 
     private fun navigateToLapor() {
-        showMessage("kamu ada di LAPOR")
+        val intent = Intent(this, LaporActivity::class.java)
+        startActivity(intent)
+//        showMessage("kamu ada di LAPOR")
     }
 
     private fun navigateToRiwayat() {
-        showMessage("kamu ada di RIWAYAT")
+        val intent = Intent(this, RiwayatLayananActivity::class.java)
+        startActivity(intent)
+//        showMessage("kamu ada di RIWAYAT")
     }
 
     private fun navigateToProfile() {
-        showMessage("kamu ada di profile")
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+//        showMessage("kamu ada di profile")
     }
 
     private fun navigateToPrint() {
         showMessage("kamu ada di print")
     }
 
-    private fun showMessage(message: String) {
+    override fun showMessage(message: String) {
         val toast = Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT)
         toast.show()
     }
@@ -184,4 +222,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             false
         }
+
+    override fun setToolbarGone() {
+        mMainAppbar.visibility = View.GONE
+        mContainer.setMarginTop(0)
+    }
+
+    override fun setToolbarVisible() {
+        mMainAppbar.visibility = View.VISIBLE
+        mContainer.setMarginTop(56)
+    }
+
+    fun View.setMarginTop(topMargin: Int) {
+        val params = layoutParams as ViewGroup.MarginLayoutParams
+        params.setMargins(params.leftMargin,topMargin, params.rightMargin, params.bottomMargin)
+        layoutParams = params
+    }
 }

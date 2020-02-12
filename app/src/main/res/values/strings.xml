@@ -7,4 +7,15 @@
     <string name="openNavDrawer">Navigation Drawer Open</string>
     <string name="closeNavDrawer">Navigation Drawer Close</string>
     <string name="nama_anda">Nama anda</string>
+    <string name="titleA">Profil Wilayah</string>
+    <string name="titleB">Sejarah</string>
+    <string name="pemerintahDesa">Pemerintah Desa</string>
+    <string name="VisiMisi">Visi dan Misi</string>
+    <string name="dataWilayahAdministrasi">Data Wilayah Administrasi</string>
+    <string name="dataPendidikanDalamKK">Data Pendidikan Dalam KK</string>
+    <string name="dataPendidikanDitempuh">Data Pendidikan ditempuh</string>
+    <string name="dataPekerjaan">Data Pekerjaan</string>
+    <string name="dataAgama">Data Agama</string>
+    <string name="dataJenisKelamin">Data Jenis Kelamin</string>
+    <string name="dataWarganegara">Data Warga Negara</string>
 </resources>

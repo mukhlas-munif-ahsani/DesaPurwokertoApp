@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BantuanActivity"></activity>
-        <activity android:name=".LaporActivity" />
+        <activity android:name=".ActivityLaporan.LaporActivity" />
         <activity android:name=".RiwayatLayananActivity" />
         <activity android:name=".ActivityDokumenPenduduk.DokumenPendudukActivity" />
         <activity android:name=".ActivityKeanggotaanKelompok.KeanggotaanKelompokActivity" />

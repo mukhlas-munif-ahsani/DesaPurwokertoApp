@@ -49,4 +49,11 @@ dependencies {
     //Butterknife Binder
     implementation 'com.jakewharton:butterknife:10.2.1'
     kapt 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    //Smart Tab Layout
+    implementation 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+
+    //Facebook shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.4.0'
 }

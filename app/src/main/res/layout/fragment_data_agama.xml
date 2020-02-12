@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityDokumenPenduduk.DokumenPendudukActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FragmentDataDesa.Fragment.DataAgamaFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:elevation="0dp">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/act_dokumen_penduduk_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/base_color"
-                app:titleTextColor="@color/white" />
-        </com.google.android.material.appbar.AppBarLayout>
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_news"
@@ -30,8 +20,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="visible"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:shimmer_duration="1500">
+
+            shimmer_duration="1500">
 
             <!-- Adding 7 rows of placeholders -->
             <LinearLayout
@@ -72,5 +62,4 @@
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
