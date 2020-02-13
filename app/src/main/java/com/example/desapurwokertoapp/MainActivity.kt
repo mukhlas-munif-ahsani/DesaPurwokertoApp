@@ -1,26 +1,23 @@
 package com.example.desapurwokertoapp
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.FrameLayout
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginTop
 import androidx.drawerlayout.widget.DrawerLayout
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.desapurwokertoapp.ActifityNotif.NotifActivity
+import com.example.desapurwokertoapp.ActivityBantuan.BantuanActivity
 import com.example.desapurwokertoapp.ActivityLaporan.LaporActivity
 import com.example.desapurwokertoapp.ActivityProfile.ProfileActivity
+import com.example.desapurwokertoapp.ActivityRiwayatLayanan.RiwayatLayananActivity
 import com.example.desapurwokertoapp.FragmentBeranda.BerandaFragment
 import com.example.desapurwokertoapp.FragmentDataDesa.DataDesaFragment
+import com.example.desapurwokertoapp.FragmentLogin.LoginFragment
 import com.example.desapurwokertoapp.FragmentPemerintahDesa.PemerintahDesaFragment
 import com.example.desapurwokertoapp.FragmentProfileDesa.ProfileDesaFragment
 import com.google.android.material.appbar.AppBarLayout
@@ -44,16 +41,20 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
 
     var isLogin:Boolean = false
 
+    lateinit var menuItem:MenuItem
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         ButterKnife.bind(this)
 
+
         setSupportActionBar(mMainToolbar)
         supportActionBar?.setTitle("Beranda")
 
         if (isLogin){
+            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
             if (savedInstanceState == null) {
                 val fragment = BerandaFragment()
                 supportFragmentManager
@@ -61,8 +62,8 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
                     .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
                     .commit()
             }
-
         }else{
+            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             if (savedInstanceState == null) {
                 val fragment = LoginFragment()
                 supportFragmentManager
@@ -100,7 +101,11 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
         // Handle action bar item clicks here.
         val id = item.getItemId()
         if (id == R.id.action_notif) {
-            navigateToNotif()
+            if (isLogin){
+                navigateToNotif()
+            }else{
+                showMessage("Anda harus login dahulu")
+            }
             return true
         }
         return super.onOptionsItemSelected(item)
@@ -132,20 +137,25 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
                 showLogoutDialog()
                 return true
             }
-            R.id.action_notif -> {
-                navigateToNotif()
-                return true
-            }
         }
         return super.onOptionsItemSelected(item)
     }
 
     private fun navigateToNotif() {
-        showMessage("kamu ada di NOTIF")
+        val intent = Intent(this, NotifActivity::class.java)
+        startActivity(intent)
     }
 
     private fun showLogoutDialog() {
-        showMessage("kamu ada di DIALOG")
+        val fragment = LoginFragment()
+        supportActionBar?.setTitle("Beranda")
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
+            .commit()
+        //------------------logout--------------------------
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        isLogin = false
+        //------------------------------------------------------
     }
 
     private fun navigateToBantuan() {
@@ -181,7 +191,6 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
         toast.show()
     }
 
-
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -191,6 +200,10 @@ open class MainActivity : AppCompatActivity(),MainActivityInterface, NavigationV
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, fragment, fragment.javaClass.getSimpleName())
                         .commit()
+                    //------------semisal ini tombol login ^^---------------------------
+                    isLogin = true
+                    mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+                    //----------------------------------------------------------
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_profile_desa -> {

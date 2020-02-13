@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import butterknife.ButterKnife
 
 import com.example.desapurwokertoapp.R
 
@@ -19,7 +20,11 @@ class DesaPemerintahFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_desa_pemerintah, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_desa_pemerintah, container, false)
+
+        ButterKnife.bind(this, view)
+
+        return view
     }
 
 

@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmer_news"
+            android:id="@+id/shimmer_data_agama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -29,32 +29,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_pie_chart_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
 
-                <include layout="@layout/item_news_shimmer" />
+                <include layout="@layout/item_shimmer" />
             </LinearLayout>
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/news_layout_refresh"
+            android:id="@+id/data_agama_layout_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar_news"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_news"
+                android:id="@+id/rv_data_agama"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

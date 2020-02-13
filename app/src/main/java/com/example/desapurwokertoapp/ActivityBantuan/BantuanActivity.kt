@@ -1,10 +1,11 @@
-package com.example.desapurwokertoapp
+package com.example.desapurwokertoapp.ActivityBantuan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.desapurwokertoapp.R
 
 class BantuanActivity : AppCompatActivity() {
 

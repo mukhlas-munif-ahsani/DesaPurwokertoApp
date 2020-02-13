@@ -12,10 +12,10 @@ import android.widget.Toast
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.desapurwokertoapp.ActivityProfile.ProfileActivity
-import com.example.desapurwokertoapp.BantuanActivity
+import com.example.desapurwokertoapp.ActivityBantuan.BantuanActivity
 import com.example.desapurwokertoapp.ActivityLaporan.LaporActivity
 import com.example.desapurwokertoapp.R
-import com.example.desapurwokertoapp.RiwayatLayananActivity
+import com.example.desapurwokertoapp.ActivityRiwayatLayanan.RiwayatLayananActivity
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import de.hdodenhof.circleimageview.CircleImageView

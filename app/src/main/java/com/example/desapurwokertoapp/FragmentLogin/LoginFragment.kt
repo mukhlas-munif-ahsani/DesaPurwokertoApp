@@ -1,4 +1,4 @@
-package com.example.desapurwokertoapp
+package com.example.desapurwokertoapp.FragmentLogin
 
 
 import android.content.Intent
@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.desapurwokertoapp.ActivityDokumenPenduduk.DokumenPendudukActivity
+import com.example.desapurwokertoapp.MainActivity
+import com.example.desapurwokertoapp.R
 
 /**
  * A simple [Fragment] subclass.
@@ -32,7 +35,8 @@ class LoginFragment : Fragment() {
         ButterKnife.bind(this, view)
 
         mButton.setOnClickListener{
-
+//            val intent = Intent(activity, MainActivity::class.java)
+//            activity?.startActivity(intent)
         }
 
         return view

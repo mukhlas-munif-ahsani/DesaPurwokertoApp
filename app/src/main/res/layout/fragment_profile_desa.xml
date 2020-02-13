@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <com.ogaclejapan.smarttablayout.SmartTabLayout
-        android:id="@+id/viewpagertab"
+        android:id="@+id/viewpagertab_profile_desa"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/base_color"
@@ -29,7 +29,7 @@
         app:stl_distributeEvenly="true" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+        android:id="@+id/viewpager_profile_desa"
         android:layout_marginTop="47dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

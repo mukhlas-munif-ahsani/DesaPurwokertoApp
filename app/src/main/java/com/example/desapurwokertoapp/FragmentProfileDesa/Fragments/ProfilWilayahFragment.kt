@@ -19,7 +19,7 @@ class ProfilWilayahFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_profile_desa, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_profil_wilayah, container, false)
 
         ButterKnife.bind(this, view)
 

@@ -1,24 +1,25 @@
-package com.example.desapurwokertoapp
+package com.example.desapurwokertoapp.ActifityNotif
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.desapurwokertoapp.R
 
-class RiwayatLayananActivity : AppCompatActivity() {
+class NotifActivity : AppCompatActivity() {
 
-    @BindView(R.id.act_riwayat_layanan_toolbar)
-    lateinit var mToolbar: Toolbar
+    @BindView(R.id.act_notif_toolbar)
+    lateinit var mToolbar:Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_riwayat_layanan)
+        setContentView(R.layout.activity_notif)
 
         ButterKnife.bind(this)
 
         setSupportActionBar(mToolbar)
-        supportActionBar?.setTitle("Riwayat Layanan")
+        supportActionBar?.setTitle("Notofikasi")
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)

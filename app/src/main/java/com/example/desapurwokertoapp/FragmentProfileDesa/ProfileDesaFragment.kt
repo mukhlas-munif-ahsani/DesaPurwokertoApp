@@ -14,15 +14,14 @@ import com.example.desapurwokertoapp.R
 import com.ogaclejapan.smarttablayout.SmartTabLayout
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
-import kotlinx.android.synthetic.main.fragment_profile_desa.view.*
 
 
 class ProfileDesaFragment : Fragment() {
 
-    @BindView(R.id.viewpager)
+    @BindView(R.id.viewpager_profile_desa)
     lateinit var mViewPager: ViewPager
 
-    @BindView(R.id.viewpagertab)
+    @BindView(R.id.viewpagertab_profile_desa)
     lateinit var smartTabLayout: SmartTabLayout
 
     override fun onCreateView(

@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BantuanActivity"></activity>
+        <activity android:name=".ActifityNotif.NotifActivity"></activity>
+        <activity android:name=".ActivityBantuan.BantuanActivity" />
         <activity android:name=".ActivityLaporan.LaporActivity" />
-        <activity android:name=".RiwayatLayananActivity" />
+        <activity android:name=".ActivityRiwayatLayanan.RiwayatLayananActivity" />
         <activity android:name=".ActivityDokumenPenduduk.DokumenPendudukActivity" />
         <activity android:name=".ActivityKeanggotaanKelompok.KeanggotaanKelompokActivity" />
         <activity android:name=".ActivityProfile.ProfileActivity" />
